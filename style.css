@@ -279,52 +279,55 @@
         transform: rotate(180deg);
     }
 
-    .partner-card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background: white;
-        border-radius: 8px;
-        border: 1px solid #e5e7eb;
-        margin-bottom: 1rem;
-        transition: box-shadow 0.2s;
-    }
+.get-in-touch {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
 
-    .partner-card:hover {
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+.contact-card {
+  background: #f9f9f9;        /* light background */
+  border-radius: 15px;        /* rounded corners */
+  padding: 30px 25px;
+  max-width: 500px;           /* minimized width */
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  text-align: center;
+}
 
-    .partner-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
+.contact-card h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
 
-    .partner-logo {
-        width: 48px;
-        height: 48px;
-        background: #e5e7eb;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.contact-card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
 
-    .partner-details .name {
-        font-weight: bold;
-        color: #111827;
-    }
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
 
-    .partner-details .category {
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
+.contact-card button {
+  background: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .partner-offers {
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
+.contact-card button:hover {
+  background: #0056b3;
+}
 
     /* Print styles */
     @media print {
@@ -332,3 +335,112 @@
             display: none;
         }
     }
+
+    /* Section Background */
+.whatsapp-section {
+  background: #00579b; 
+  padding: 60px 0;
+  color: white;
+}
+
+/* Flex wrapper */
+.whatsapp-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+/* Left content (Stay Updated) */
+.whatsapp-content {
+  flex: 1;
+  min-width: 200px;
+  color: white;
+  margin-left: 160px;
+}
+
+.whatsapp-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.whatsapp-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+/* Subscribe form */
+.subscribe-form {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.subscribe-form button {
+  background: #fcb900;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+  background: #ffcc33;
+}
+
+/* Right Card */
+.whatsapp-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  color: #333;
+  flex: 0 0 350px; /* fixed width card */
+}
+
+.whatsapp-card h5 {
+  margin-bottom: 10px;
+}
+
+.whatsapp-card .phone {
+  color: #fcb900;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.whatsapp-card .qr-code {
+  width: 120px;
+  margin: 15px 0;
+}
+
+.whatsapp-card .small {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .whatsapp-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .whatsapp-card {
+    margin-top: 20px;
+    flex: 1;
+    width: 100%;
+  }
+}
