@@ -46,12 +46,12 @@
     </header>
 
     <!-- Top Scrollable Cards -->
-    <div class="w-full relative py-8 bg-gray-50">
+    <div class="w-full relative py-2 bg-gray-50">
         <!-- Cards Wrapper -->
         <div id="carousel" class="flex space-x-6 overflow-x-auto scrollbar-hide scroll-smooth px-12">
 
             <!-- Card 1 -->
-            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-6 border hover:shadow-xl transition">
+            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-2 border hover:shadow-xl transition">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Special Weekend Deals</h3>
                 <p class="text-gray-600 text-sm mb-4">Get amazing discounts on our latest summer fashion collection.</p>
                 <button
@@ -60,7 +60,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-6 border hover:shadow-xl transition">
+            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-2 border hover:shadow-xl transition">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">New Store Launches</h3>
                 <p class="text-gray-600 text-sm mb-4">Discover new stores and exclusive opening offers.</p>
                 <button
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-6 border hover:shadow-xl transition">
+            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-2 border hover:shadow-xl transition">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Festival Bonanza</h3>
                 <p class="text-gray-600 text-sm mb-4">Celebrate the festive season with exclusive offers and gifts.</p>
                 <button
@@ -77,7 +77,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-6 border hover:shadow-xl transition">
+            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-2 border hover:shadow-xl transition">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Flash Sales</h3>
                 <p class="text-gray-600 text-sm mb-4">Limited time flash sales with massive discounts. Hurry!</p>
                 <button class="bg-red-500 text-white px-4 py-2 rounded-md font-medium hover:bg-red-600 transition">Grab
@@ -85,7 +85,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-6 border hover:shadow-xl transition">
+            <div class="flex-shrink-0 w-[600px] bg-white rounded-2xl shadow-lg p-2 border hover:shadow-xl transition">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Mega Discounts</h3>
                 <p class="text-gray-600 text-sm mb-4">Save big with never-before-seen discounts across all categories.
                 </p>
@@ -98,7 +98,7 @@
 
 
     <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-teal-500 to-teal-600 min-h-screen flex items-center">
+<section class="relative bg-gradient-to-r from-teal-500 to-teal-600 min-h-[77vh] flex items-center">
   <!-- Background Image -->
   <div class="absolute inset-0">
     <img src="img/1.jpg" alt="Seasonal Offers"
@@ -157,9 +157,6 @@
     data-title="50% Off on Summer Collection" data-store="Saravana Stores" data-category="Fashion">
     <div class="relative">
       <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-        <div class="absolute top-3 left-3">
-          <span class="bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">50% OFF</span>
-        </div>
         <div class="absolute top-3 right-3">
           <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Platinum</span>
         </div>
@@ -197,9 +194,6 @@
     data-title="Buy 1 Get 1 Free Pizza" data-store="Dominos" data-category="Food">
     <div class="relative">
       <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-        <div class="absolute top-3 left-3">
-          <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">BOGO</span>
-        </div>
         <div class="absolute top-3 right-3">
           <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
         </div>
@@ -225,10 +219,12 @@
           <span class="text-sm text-gray-600">2 Days Left</span>
         </div>
       </div>
-      <button class="w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600">
+    <button 
+        class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+        data-img="img/1.jpg">
         <i class="bi bi-download"></i>
         <span>Download Coupon</span>
-      </button>
+        </button>
     </div>
   </div>
 
@@ -237,11 +233,9 @@
     data-title="Flat 30% Off on Electronics" data-store="Reliance Digital" data-category="Electronics">
     <div class="relative">
       <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-        <div class="absolute top-3 left-3">
-          <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-semibold">30% OFF</span>
-        </div>
+
         <div class="absolute top-3 right-3">
-          <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-medium">Silver</span>
+          <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-medium">Diamond</span>
         </div>
         <div class="absolute bottom-3 left-3">
           <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
@@ -265,10 +259,12 @@
           <span class="text-sm text-gray-600">5 Days Left</span>
         </div>
       </div>
-      <button class="w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600">
+    <button 
+        class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+        data-img="img/1.jpg">
         <i class="bi bi-download"></i>
         <span>Download Coupon</span>
-      </button>
+        </button>
     </div>
   </div>
 
@@ -277,11 +273,8 @@
     data-title="20% Off on Groceries" data-store="Big Bazaar" data-category="Groceries">
     <div class="relative">
       <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-        <div class="absolute top-3 left-3">
-          <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
-        </div>
         <div class="absolute top-3 right-3">
-          <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">Basic</span>
+          <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
         </div>
         <div class="absolute bottom-3 left-3">
           <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
@@ -305,16 +298,30 @@
           <span class="text-sm text-gray-600">1 Week Left</span>
         </div>
       </div>
-      <button class="w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600">
+    <button 
+        class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+        data-img="img/1.jpg">
         <i class="bi bi-download"></i>
         <span>Download Coupon</span>
-      </button>
+        </button>
     </div>
   </div>
 
 </div>
   </div>
 </section>
+
+<!-- Coupon Modal -->
+<div id="couponModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-md w-full relative">
+    <!-- Close Button -->
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl">&times;</button>
+    
+    <!-- Coupon Image -->
+    <img id="couponImage" src="img/coupon-sample.jpg" alt="Coupon" class="w-full rounded-lg">
+  </div>
+</div>
+
 
 <section class="bg-gray-50 py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -439,10 +446,13 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Users Say</h2>
-    <p>Real stories from our community</p>
-    <div class="testimonial-grid">
+<section class="testimonials">
+  <h2>What Our Users Say</h2>
+  <p>Real stories from our community</p>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      <!-- Original Testimonials -->
       <div class="testimonial-card">
         <p>"Amazing discounts from local stores! Saved over ₹5000 last month."</p>
         <div class="testimonial-user">
@@ -473,8 +483,81 @@
           </div>
         </div>
       </div>
+      <div class="testimonial-card">
+        <p>"Great savings on groceries every week. Must try!"</p>
+        <div class="testimonial-user">
+          <div class="avatar">A</div>
+          <div class="testimonial-user-info">
+            <div class="name">Arun P.</div>
+            <div class="location">Periyakulam</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"User-friendly and very useful for monthly shopping."</p>
+        <div class="testimonial-user">
+          <div class="avatar">D</div>
+          <div class="testimonial-user-info">
+            <div class="name">Divya L.</div>
+            <div class="location">Cumbum</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicate Testimonials for Infinite Scroll -->
+      <div class="testimonial-card">
+        <p>"Amazing discounts from local stores! Saved over ₹5000 last month."</p>
+        <div class="testimonial-user">
+          <div class="avatar">P</div>
+          <div class="testimonial-user-info">
+            <div class="name">Priya S.</div>
+            <div class="location">Theni</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Easy to find and use coupons. Great platform for savings."</p>
+        <div class="testimonial-user">
+          <div class="avatar">R</div>
+          <div class="testimonial-user-info">
+            <div class="name">Rajesh K.</div>
+            <div class="location">Bodinayakanur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Love the variety of offers available. Highly recommended!"</p>
+        <div class="testimonial-user">
+          <div class="avatar">M</div>
+          <div class="testimonial-user-info">
+            <div class="name">Meera T.</div>
+            <div class="location">Theni South</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Great savings on groceries every week. Must try!"</p>
+        <div class="testimonial-user">
+          <div class="avatar">A</div>
+          <div class="testimonial-user-info">
+            <div class="name">Arun P.</div>
+            <div class="location">Periyakulam</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"User-friendly and very useful for monthly shopping."</p>
+        <div class="testimonial-user">
+          <div class="avatar">D</div>
+          <div class="testimonial-user-info">
+            <div class="name">Divya L.</div>
+            <div class="location">Cumbum</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FAQ and Top Partner Stores -->
 <section class="faq-partner">

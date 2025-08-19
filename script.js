@@ -57,3 +57,27 @@ searchInput.addEventListener("input", function () {
   });
 });
 
+  const modal = document.getElementById("couponModal");
+  const couponImage = document.getElementById("couponImage");
+  const closeModal = document.getElementById("closeModal");
+
+  // Open modal on button click
+  document.querySelectorAll(".download-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const imgSrc = button.getAttribute("data-img");
+      couponImage.src = imgSrc; // Set image dynamically
+      modal.classList.remove("hidden");
+    });
+  });
+
+  // Close modal
+  closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  // Close when clicking outside
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
