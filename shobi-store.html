@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f4f7fa;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .products-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.product-item {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 120px;
+  padding: 15px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-item i {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.product-item span {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+.product-item:hover {
+  background: #007bff;
+  color: white;
+}
+
+.product-item:hover i {
+  color: white;
+}
+
+    .store-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .icon-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8f9fa;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .icon-box i {
+      color: #e63946;
+    }
+    .host-profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .btn-custom {
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .social-icons i {
+      font-size: 18px;
+      margin: 0 8px;
+      color: #555;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .social-icons i:hover {
+      color: #e63946;
+    }
+    .price-tag {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .price-tag i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: #e63946;
+    }
+
+    .vendor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vendor-card .profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+}
+
+.btn-danger-soft {
+  background: #fde2e2;
+  color: #d9534f;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-danger-soft:hover {
+  background: #d9534f;
+  color: #fff;
+}
+
+.btn-success-soft {
+  background: #d4edda;
+  color: #28a745;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-success-soft:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.contact-box i {
+  font-size: 18px;
+}
+
+.store-card ul {
+  list-style: none;  /* removes bullets */
+  padding-left: 0;   /* removes left padding */
+  margin: 0;         /* optional, tighter spacing */
+}
+
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <div class="row g-4">
+    
+<!-- Left Column -->
+<div class="col-lg-8">
+
+  <!-- Top Info -->
+  <div class="store-card d-flex flex-wrap gap-3">
+    <div class="icon-box"><i class="fa-solid fa-store"></i> Elite Lifestyle Store</div>
+    <div class="icon-box"><i class="fa-solid fa-box"></i> Products: 250+</div>
+    <div class="icon-box"><i class="fa-solid fa-tags"></i> Home & Fashion</div>
+    <div class="icon-box"><i class="fa-solid fa-clock"></i> Since 2005</div>
+  </div>
+
+  <!-- Description -->
+  <div class="store-card">
+    <h5>Description</h5>
+    <p>
+      Welcome to <strong>Elite Lifestyle Store</strong>, where style meets comfort.  
+      We specialize in premium clothing, home décor, and lifestyle products that bring elegance to your everyday life.  
+      Trusted by thousands of families since 2005, we focus on delivering quality, affordability, and excellent customer service.
+    </p>
+  </div>
+
+  <!-- Services -->
+  <div class="store-card">
+    <h5>Services Offered</h5>
+    <ul>
+      <li><i class="fa-solid fa-truck-fast text-success me-2"></i> Free delivery on orders above ₹1499</li>
+      <li><i class="fa-solid fa-headset text-success me-2"></i> 24/7 Customer Support</li>
+      <li><i class="fa-solid fa-undo text-success me-2"></i> Easy Returns & Exchanges</li>
+      <li><i class="fa-solid fa-credit-card text-success me-2"></i> Multiple Payment Options</li>
+    </ul>
+  </div>
+
+<!-- Products -->
+<div class="store-card products-card">
+  <h5>Products Available</h5>
+  <div class="products-list">
+    <div class="product-item">
+      <i class="fas fa-couch"></i>
+      <span>Furniture</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-paint-brush"></i>
+      <span>Home Décor</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-tshirt"></i>
+      <span>Clothing</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-shoe-prints"></i>
+      <span>Footwear</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-utensils"></i>
+      <span>Kitchen Essentials</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-tv"></i>
+      <span>Electronics</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-gift"></i>
+      <span>Festive Specials</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-child"></i>
+      <span>Kids Collection</span>
+    </div>
+    <div class="product-item">
+      <i class="fas fa-ring"></i>
+      <span>Accessories</span>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Active Offers -->
+  <div class="store-card">
+    <h5>Active Offers</h5>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="price-tag">
+          <i class="fa-solid fa-percent"></i>
+          Flat 30% Off
+          <div class="text-muted small">On Home Décor</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="price-tag">
+          <i class="fa-solid fa-gift"></i>
+          Buy 2 Get 1 Free
+          <div class="text-muted small">On Footwear</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="price-tag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Free Cushion Set
+          <div class="text-muted small">Above ₹2000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="store-card">
+    <h5>Gallery</h5>
+    <div class="d-flex overflow-auto">
+      <img src="https://via.placeholder.com/200x120?text=Store+Front" class="me-2 rounded" alt="">
+      <img src="https://via.placeholder.com/200x120?text=Fashion+Section" class="me-2 rounded" alt="">
+      <img src="https://via.placeholder.com/200x120?text=Home+Decor" class="me-2 rounded" alt="">
+      <img src="https://via.placeholder.com/200x120?text=Electronics" class="me-2 rounded" alt="">
+    </div>
+  </div>
+
+
+
+  <!-- Specialities -->
+  <div class="store-card">
+    <h5>Products Available</h5>
+    <ul class="list-unstyled mb-0">
+        <li><i class="fas fa-star text-warning"></i> Unique Handmade Items</li>
+        <li><i class="fas fa-star text-warning"></i> Eco-Friendly Materials</li>
+        <li><i class="fas fa-star text-warning"></i> Customization Available</li>
+      </ul>
+  </div>
+
+
+
+
+
+</div>
+
+
+    <!-- Right Column -->
+<div class="col-lg-4">
+
+
+  <div class="vendor-card text-center p-3">
+
+    <!-- Profile -->
+    <img src="https://via.placeholder.com/80" class="profile-img mb-2" alt="Vendor">
+    <p class="text-muted mb-0">Hosted By</p>
+    <h6 class="fw-bold">Shree K. Patel</h6>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-center gap-2 my-3">
+      <button class="btn btn-sm btn-danger-soft">
+        <i class="fa-solid fa-envelope"></i> Send Message
+      </button>
+      <button class="btn btn-sm btn-success-soft">
+        <i class="fa-solid fa-user-plus"></i> Follow Vendor
+      </button>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-box">
+      <i class="fa-solid fa-envelope text-danger"></i>
+      <div>
+        <small class="text-muted">Email</small>
+        <p class="mb-0">shree.patel@gmail.com</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <i class="fa-solid fa-phone text-danger"></i>
+      <div>
+        <small class="text-muted">Phone No.</small>
+        <p class="mb-0">+41 256 254 5487</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <i class="fa-solid fa-globe text-danger"></i>
+      <div>
+        <small class="text-muted">Website</small>
+        <p class="mb-0"><a href="#" class="text-decoration-none">www.ListingHub.co.in</a></p>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="d-flex justify-content-center gap-3 mt-3">
+      <a href="#"><i class="fab fa-facebook fa-lg text-primary"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-lg text-info"></i></a>
+      <a href="#"><i class="fab fa-instagram fa-lg text-danger"></i></a>
+      <a href="#"><i class="fab fa-youtube fa-lg text-danger"></i></a>
+      <a href="#"><i class="fab fa-whatsapp fa-lg text-success"></i></a>
+    </div>
+
+  </div>
+
+  <!-- Google Map Card -->
+<div class="card shadow-sm rounded-3 mt-4">
+  <div class="card-body p-2">
+    <!-- Title -->
+    <h5 class="card-title px-3 pt-3 mb-2 text-center">📍 Location</h5>
+    <!-- Map -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.526768318934!2d77.5946!3d10.0159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859fa52b1b0ad%3A0x123456789abcdef!2sYour%20Location!5e0!3m2!1sen!2sin!4v1692894762829!5m2!1sen!2sin" 
+      width="100%" 
+      height="250" 
+      style="border:0; border-radius: 0 0 12px 12px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+</body>
+</html>

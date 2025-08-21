@@ -215,123 +215,258 @@
         color: #6b7280;
     }
 
-    /* FAQ & Partner Stores */
-    .faq-partner {
-        padding: 4rem 1rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
+
+        .faq-contact-wrapper {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
     }
 
-    @media (min-width: 1024px) {
-        .faq-partner {
-            grid-template-columns: 1fr 1fr;
-        }
+    .faq-contact-wrapper h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
     }
 
-    .faq h2,
-    .partners h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
+    .faq-contact-wrapper p {
+      font-size: 16px;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .faq-contact-section {
+      display: flex;
+      gap: 40px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      flex: 1;
+      text-align: left;
     }
 
     .faq-item {
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        margin-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 12px;
     }
 
     .faq-item button {
-        width: 100%;
-        padding: 1rem 1.5rem;
-        text-align: left;
-        background: none;
-        border: none;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #111827;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .faq-item button:hover {
+      color: #ff4d4d;
     }
 
     .faq-item .answer {
-        display: none;
-        margin: 10px 0;
-        padding: 10px;
-        background: #f9f9f9;
-        border-left: 3px solid #007bff;
+      display: none;
+      padding: 0 14px 14px;
+      color: #555;
+      font-size: 15px;
     }
 
-    .faq-item button {
-        width: 100%;
-        text-align: left;
-        background: none;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        padding: 10px;
+    .faq-item.active .answer {
+      display: block;
     }
 
-    .faq-item button.active span {
-        transform: rotate(180deg);
+    .faq-item i {
+      transition: transform 0.3s;
     }
 
-    .partner-card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background: white;
-        border-radius: 8px;
-        border: 1px solid #e5e7eb;
-        margin-bottom: 1rem;
-        transition: box-shadow 0.2s;
+    .faq-item.active i {
+      transform: rotate(180deg);
+      color: #ff4d4d;
     }
 
-    .partner-card:hover {
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    .contact-form {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;   /* ✅ Prevents overflow */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff4d4d;
+}
+
+
+    .contact-form button {
+      background: #ff4d4d;
+      border: none;
+      padding: 14px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
     }
 
-    .partner-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+    .contact-form button:hover {
+      background: #e63e3e;
     }
 
-    .partner-logo {
-        width: 48px;
-        height: 48px;
-        background: #e5e7eb;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    /* Responsive */
+    @media (max-width: 900px) {
+      .faq-contact-section {
+        flex-direction: column;
+      }
     }
 
-    .partner-details .name {
-        font-weight: bold;
-        color: #111827;
-    }
 
-    .partner-details .category {
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
+.contact-form h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #ff4d4d; /* 🔴 You can change this to your preferred color */
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+    /* Section Background */
+.whatsapp-section {
+  background: #00579b; 
+  padding: 60px 0;
+  color: white;
+}
 
-    .partner-offers {
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
+/* Flex wrapper */
+.whatsapp-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
 
-    /* Print styles */
-    @media print {
-        .no-print {
-            display: none;
-        }
-    }
+/* Left content (Stay Updated) */
+.whatsapp-content {
+  flex: 1;
+  min-width: 200px;
+  color: white;
+  margin-left: 160px;
+}
+
+.whatsapp-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.whatsapp-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+/* Subscribe form */
+.subscribe-form {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.subscribe-form button {
+  background: #fcb900;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+  background: #ffcc33;
+}
+
+/* Right Card */
+.whatsapp-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  color: #333;
+  flex: 0 0 350px; /* fixed width card */
+}
+
+.whatsapp-card h5 {
+  margin-bottom: 10px;
+}
+
+.whatsapp-card .phone {
+  color: #fcb900;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.whatsapp-card .qr-code {
+  width: 120px;
+  margin: 15px 0;
+}
+
+.whatsapp-card .small {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .whatsapp-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .whatsapp-card {
+    margin-top: 20px;
+    flex: 1;
+    width: 100%;
+  }
+}
+
     
     .testimonials {
   text-align: center;
@@ -394,3 +529,41 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+
+.feedback-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.feedback-section h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.feedback-carousel {
+  overflow: hidden;
+  width: 80%;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.feedback-card {
+  flex: 0 0 calc(50% - 20px); /* subtract margins so 2 fit perfectly */
+  margin: 10px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  font-size: 18px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+

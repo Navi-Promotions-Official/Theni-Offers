@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -95,59 +96,59 @@
 
 
     <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-teal-500 to-teal-600 min-h-[77vh] flex items-center">
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img src="img/1.jpg" alt="Seasonal Offers"
-      class="w-full h-full object-cover">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  </div>
+    <section class="relative bg-gradient-to-r from-teal-500 to-teal-600 min-h-[77vh] flex items-center">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="img/1.jpg" alt="Seasonal Offers"
+          class="w-full h-full object-cover">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
 
-  <!-- Hero Content -->
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="max-w-2xl">
-      <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-        Save Big This Season
-      </h2>
-      <p class="text-xl text-teal-100 mb-8">
-        Discover amazing deals from local Theni stores
-      </p>
-      <button
-        class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-md font-semibold hover:bg-yellow-400 transition-colors inline-flex items-center space-x-2">
-        <span>Browse Offers</span>
-        <i class="bi bi-arrow-right text-lg"></i>
-      </button>
-    </div>
-  </div>
-</section>
+      <!-- Hero Content -->
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-2xl">
+          <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Save Big This Season
+          </h2>
+          <p class="text-xl text-teal-100 mb-8">
+            Discover amazing deals from local Theni stores
+          </p>
+          <button
+            class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-md font-semibold hover:bg-yellow-400 transition-colors inline-flex items-center space-x-2">
+            <span>Browse Offers</span>
+            <i class="bi bi-arrow-right text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </section>
 
 
     <!-- Latest Offers Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Offers</h2>
-    <p class="text-gray-600 mb-8">Discover amazing deals from local stores</p>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Offers</h2>
+        <p class="text-gray-600 mb-8">Discover amazing deals from local stores</p>
 
-    <!-- Search and Filters -->
-    <div class="flex flex-col md:flex-row gap-4 mb-8">
-      <div class="flex-1 relative">
-        <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-        <input id="searchInput" type="text" placeholder="Search offers..."
-          class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent" />
-      </div>
-      <select
-        class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
-        <option>All Categories</option>
-        <option>Fashion</option>
-        <option>Electronics</option>
-        <option>Groceries</option>
-        <option>Home</option>
-      </select>
-    </div>
+        <!-- Search and Filters -->
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+          <div class="flex-1 relative">
+            <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input id="searchInput" type="text" placeholder="Search offers..."
+              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent" />
+          </div>
+          <select
+            class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
+            <option>All Categories</option>
+            <option>Fashion</option>
+            <option>Electronics</option>
+            <option>Groceries</option>
+            <option>Home</option>
+          </select>
+        </div>
 
-    <!-- Offer Cards Grid -->
-<div id="offersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Offer Cards Grid -->
+    <div id="offersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
   <!-- Card 1 -->
   <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
@@ -365,103 +366,175 @@
     <!-- Store Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <!-- Badge -->
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Platinum</span>
-        <!-- Image Placeholder -->
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
+      <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+        data-title="50% Off on Summer Collection" data-store="Saravana Stores" data-category="Fashion">
+        <div class="relative">
+          <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
+            <div class="absolute top-3 right-3">
+              <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Platinum</span>
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Expired</span>
+            </div>
+          </div>
         </div>
-        <!-- Content -->
-        <div class="p-5">
-          <div class="flex items-center mb-3">
-            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">S</span>
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-2">
+            <i class="bi bi-geo-alt text-gray-400"></i>
+            <span class="text-sm text-gray-600">Saravana Stores</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">50% Off on Summer Collection</h3>
+          <p class="text-sm text-gray-600 mb-4">Get amazing discounts on our latest summer fashion collection.</p>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-tag text-gray-400"></i>
+              <span class="text-sm text-gray-600">Fashion</span>
             </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Saravana Stores</h3>
-              <p class="text-sm text-gray-500">Fashion</p>
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-clock text-gray-400"></i>
+              <span class="text-sm text-gray-600">Expired</span>
             </div>
           </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.5</span> (234)
-            </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
-          </div>
+          <button class="w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-gray-100 text-gray-500 cursor-not-allowed" disabled>
+            <i class="bi bi-download"></i>
+            <span>Download Coupon</span>
+          </button>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Diamond</span>
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
+      <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+        data-title="Buy 1 Get 1 Free Pizza" data-store="Dominos" data-category="Food">
+        <div class="relative">
+          <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
+            <div class="absolute top-3 right-3">
+              <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+          </div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center mb-3">
-            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">T</span>
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-2">
+            <i class="bi bi-geo-alt text-gray-400"></i>
+            <span class="text-sm text-gray-600">Dominos</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Buy 1 Get 1 Free Pizza</h3>
+          <p class="text-sm text-gray-600 mb-4">Enjoy delicious pizzas with our exclusive BOGO offer.</p>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-tag text-gray-400"></i>
+              <span class="text-sm text-gray-600">Food</span>
             </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Theni Electronics Hub</h3>
-              <p class="text-sm text-gray-500">Electronics</p>
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-clock text-gray-400"></i>
+              <span class="text-sm text-gray-600">2 Days Left</span>
             </div>
           </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.2</span> (156)
-            </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
-          </div>
+        <button 
+            class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+            data-img="img/1.jpg">
+            <i class="bi bi-download"></i>
+            <span>Download Coupon</span>
+            </button>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Gold</span>
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
+      <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+        data-title="Flat 30% Off on Electronics" data-store="Reliance Digital" data-category="Electronics">
+        <div class="relative">
+          <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
+
+            <div class="absolute top-3 right-3">
+              <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-medium">Diamond</span>
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+          </div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center mb-3">
-            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">F</span>
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-2">
+            <i class="bi bi-geo-alt text-gray-400"></i>
+            <span class="text-sm text-gray-600">Reliance Digital</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Flat 30% Off on Electronics</h3>
+          <p class="text-sm text-gray-600 mb-4">Upgrade your gadgets with big savings on top brands.</p>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-tag text-gray-400"></i>
+              <span class="text-sm text-gray-600">Electronics</span>
             </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Fresh Mart Grocery</h3>
-              <p class="text-sm text-gray-500">Groceries</p>
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-clock text-gray-400"></i>
+              <span class="text-sm text-gray-600">5 Days Left</span>
             </div>
           </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.0</span> (89)
-            </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
-          </div>
+        <button 
+            class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+            data-img="img/1.jpg">
+            <i class="bi bi-download"></i>
+            <span>Download Coupon</span>
+            </button>
         </div>
       </div>
+
+      <!-- Card 4 -->
+      <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+        data-title="20% Off on Groceries" data-store="Big Bazaar" data-category="Groceries">
+        <div class="relative">
+          <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
+            <div class="absolute top-3 right-3">
+              <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center space-x-2 mb-2">
+            <i class="bi bi-geo-alt text-gray-400"></i>
+            <span class="text-sm text-gray-600">Big Bazaar</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">20% Off on Groceries</h3>
+          <p class="text-sm text-gray-600 mb-4">Save big on daily essentials at your nearest Big Bazaar outlet.</p>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-tag text-gray-400"></i>
+              <span class="text-sm text-gray-600">Groceries</span>
+            </div>
+            <div class="flex items-center space-x-1">
+              <i class="bi bi-clock text-gray-400"></i>
+              <span class="text-sm text-gray-600">1 Week Left</span>
+            </div>
+          </div>
+        <button 
+            class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+            data-img="img/1.jpg">
+            <i class="bi bi-download"></i>
+            <span>Download Coupon</span>
+            </button>
+        </div>
+      </div>
+
+    </div>
+      </div>
+    </section>
+
+  <!-- Coupon Modal -->
+  <div id="couponModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full relative">
+      <!-- Close Button -->
+      <button id="closeModal" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl">&times;</button>
+      
+      <!-- Coupon Image -->
+      <img id="couponImage" src="img/coupon-sample.jpg" alt="Coupon" class="w-full rounded-lg">
     </div>
   </div>
-</section>
 
-  <section class="stats">
-    <div class="stat-box">
-      <div class="stat-icon">🏬</div>
-      <h3>156+</h3>
-      <p>Partner Stores</p>
-    </div>
-    <div class="stat-box">
-      <div class="stat-icon">📈</div>
-      <h3>₹240.0L+</h3>
-      <p>Total Savings</p>
-    </div>
-    <div class="stat-box">
-      <div class="stat-icon">😊</div>
-      <h3>5,420+</h3>
-      <p>Happy Users</p>
-    </div>
-  </section>
 
   <!-- Testimonials Section -->
 <section class="testimonials">
@@ -506,73 +579,325 @@
     </div>
   </div>
 </section>
+    <section class="bg-gray-50 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-gray-900">Browse Stores</h2>
+          <p class="text-gray-600">Shop by category</p>
+        </div>
 
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-3 mb-10">
+          <button class="px-4 py-2 rounded-md bg-teal-600 text-white font-medium">All</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Food & Dining</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Fashion</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Electronics</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Groceries</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Beauty & Wellness</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Pharmacy</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Home & Kitchen</button>
+          <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Cafes & Bakeries</button>
+        </div>
+
+        <!-- Store Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
+            <!-- Badge -->
+            <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Platinum</span>
+            <!-- Image Placeholder -->
+            <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
+              <i class="bi bi-image text-gray-400 text-4xl"></i>
+            </div>
+            <!-- Content -->
+            <div class="p-5">
+              <div class="flex items-center mb-3">
+                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                  <span class="text-gray-500 text-sm">S</span>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-lg font-semibold text-gray-900">Saravana Stores</h3>
+                  <p class="text-sm text-gray-500">Fashion</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-700">
+                  ⭐ <span class="font-semibold">4.5</span> (234)
+                </p>
+                <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
+            <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Diamond</span>
+            <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
+              <i class="bi bi-image text-gray-400 text-4xl"></i>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center mb-3">
+                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                  <span class="text-gray-500 text-sm">T</span>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-lg font-semibold text-gray-900">Theni Electronics Hub</h3>
+                  <p class="text-sm text-gray-500">Electronics</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-700">
+                  ⭐ <span class="font-semibold">4.2</span> (156)
+                </p>
+                <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
+            <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Gold</span>
+            <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
+              <i class="bi bi-image text-gray-400 text-4xl"></i>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center mb-3">
+                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                  <span class="text-gray-500 text-sm">F</span>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-lg font-semibold text-gray-900">Fresh Mart Grocery</h3>
+                  <p class="text-sm text-gray-500">Groceries</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-700">
+                  ⭐ <span class="font-semibold">4.0</span> (89)
+                </p>
+                <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-box">
+        <div class="stat-icon">🏬</div>
+        <h3>156+</h3>
+        <p>Partner Stores</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">📈</div>
+        <h3>₹240.0L+</h3>
+        <p>Total Savings</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">😊</div>
+        <h3>5,420+</h3>
+        <p>Happy Users</p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2>What Our Users Say</h2>
+      <p>Real stories from our community</p>
+
+      <div class="testimonial-slider">
+        <div class="testimonial-track">
+          <!-- Original Testimonials -->
+          <div class="testimonial-card">
+            <p>"Amazing discounts from local stores! Saved over ₹5000 last month."</p>
+            <div class="testimonial-user">
+              <div class="avatar">P</div>
+              <div class="testimonial-user-info">
+                <div class="name">Priya S.</div>
+                <div class="location">Theni</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Easy to find and use coupons. Great platform for savings."</p>
+            <div class="testimonial-user">
+              <div class="avatar">R</div>
+              <div class="testimonial-user-info">
+                <div class="name">Rajesh K.</div>
+                <div class="location">Bodinayakanur</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Love the variety of offers available. Highly recommended!"</p>
+            <div class="testimonial-user">
+              <div class="avatar">M</div>
+              <div class="testimonial-user-info">
+                <div class="name">Meera T.</div>
+                <div class="location">Theni South</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Great savings on groceries every week. Must try!"</p>
+            <div class="testimonial-user">
+              <div class="avatar">A</div>
+              <div class="testimonial-user-info">
+                <div class="name">Arun P.</div>
+                <div class="location">Periyakulam</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"User-friendly and very useful for monthly shopping."</p>
+            <div class="testimonial-user">
+              <div class="avatar">D</div>
+              <div class="testimonial-user-info">
+                <div class="name">Divya L.</div>
+                <div class="location">Cumbum</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate Testimonials for Infinite Scroll -->
+          <div class="testimonial-card">
+            <p>"Amazing discounts from local stores! Saved over ₹5000 last month."</p>
+            <div class="testimonial-user">
+              <div class="avatar">P</div>
+              <div class="testimonial-user-info">
+                <div class="name">Priya S.</div>
+                <div class="location">Theni</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Easy to find and use coupons. Great platform for savings."</p>
+            <div class="testimonial-user">
+              <div class="avatar">R</div>
+              <div class="testimonial-user-info">
+                <div class="name">Rajesh K.</div>
+                <div class="location">Bodinayakanur</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Love the variety of offers available. Highly recommended!"</p>
+            <div class="testimonial-user">
+              <div class="avatar">M</div>
+              <div class="testimonial-user-info">
+                <div class="name">Meera T.</div>
+                <div class="location">Theni South</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"Great savings on groceries every week. Must try!"</p>
+            <div class="testimonial-user">
+              <div class="avatar">A</div>
+              <div class="testimonial-user-info">
+                <div class="name">Arun P.</div>
+                <div class="location">Periyakulam</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>"User-friendly and very useful for monthly shopping."</p>
+            <div class="testimonial-user">
+              <div class="avatar">D</div>
+              <div class="testimonial-user-info">
+                <div class="name">Divya L.</div>
+                <div class="location">Cumbum</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
   <!-- FAQ and Top Partner Stores -->
-<section class="faq-partner">
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
+  <section class="faq-contact-wrapper">
+    <!-- COMMON TITLE -->
+    <h2>Have Questions? We’ve Got Answers!</h2>
+    <p>Explore our frequently asked questions or reach out directly through our contact form. 
+       Whether you’re curious about our services, support, or customization, we’re here to help you.</p>
 
-    <div class="faq-item">
-      <button>How do I redeem a coupon? <span>▼</span></button>
-      <div class="answer">
-        <p>You can redeem a coupon by applying the coupon code at checkout. The discount will be applied instantly.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button>Do I need to pay to download coupons? <span>▼</span></button>
-      <div class="answer">
-        <p>No, downloading coupons is completely free of charge.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button>Can I use a coupon more than once? <span>▼</span></button>
-      <div class="answer">
-        <p>Most coupons are for one-time use only. Check the coupon terms for details.</p>
-      </div>
-    </div>
-  </div>
-
-    <div class="partners">
-      <h2>Top Partner Stores</h2>
-      <div class="partner-card">
-        <div class="partner-info">
-          <div class="partner-logo">📍</div>
-          <div class="partner-details">
-            <div class="name">Saravana Stores</div>
-            <div class="category">Fashion & Lifestyle</div>
-          </div>
+    <div class="faq-contact-section">
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <div class="faq-item">
+          <button>
+            What services do you offer? 
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="answer">We provide web development, UI/UX design, and digital marketing solutions.</div>
         </div>
-        <div class="partner-offers">15+ Offers</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-info">
-          <div class="partner-logo">📍</div>
-          <div class="partner-details">
-            <div class="name">Theni Electronics Hub</div>
-            <div class="category">Electronics</div>
-          </div>
+        <div class="faq-item">
+          <button>
+            How can I contact support? 
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="answer">You can fill out the form on the right or email us at support@example.com.</div>
         </div>
-        <div class="partner-offers">12+ Offers</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-info">
-          <div class="partner-logo">📍</div>
-          <div class="partner-details">
-            <div class="name">Fresh Mart Grocery</div>
-            <div class="category">Groceries</div>
-          </div>
+        <div class="faq-item">
+          <button>
+            Do you provide custom solutions? 
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="answer">Yes, we tailor solutions according to business needs.</div>
         </div>
-        <div class="partner-offers">8+ Offers</div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Get in Touch</h3>
+        <form>
+          <input type="text" placeholder="Your Name*" required>
+          <input type="email" placeholder="Your Email*" required>
+          <textarea rows="4" placeholder="Write something..."></textarea>
+          <button type="submit">SEND REQUEST</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <hr class="my-16 border-t border-gray-300">
+
+
+  <section class="whatsapp-section">
+    <div class="container">
+      <div class="whatsapp-wrapper">
+        
+        <!-- Left Content -->
+        <div class="whatsapp-content">
+          <h2>Stay Updated</h2>
+          <p>Subscribe today and never miss out on the latest updates, exclusive offers, and valuable learning resources.Join our growing community and enhance your knowledge every week!</p>
+          
+          <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Right Card -->
+        <div class="whatsapp-card">
+          <h5>Connect with Us on WhatsApp</h5>
+          <p>Prefer a quick chat? Reach out instantly on WhatsApp for support or registration assistance.</p>
+          <p class="phone">+91 9500756881</p>
+          <img src="qr-code.png" alt="WhatsApp QR" class="qr-code">
+          <p class="small">
+            Scan the QR code or tap the number above to start a WhatsApp chat instantly.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- Stay Updated Section -->
-<section class="py-16 bg-gray-50">
+<!-- <section class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
     <p class="text-gray-600 mb-8">Get the latest offers delivered to your inbox</p>
@@ -590,7 +915,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Footer -->
 <footer class="bg-white border-t border-gray-200">
@@ -669,17 +994,12 @@
 </div>
 
 
-    <!-- Bottom Footer -->
-  <div class="w-full flex flex-col md:flex-row justify-between items-center px-6 py-4">
-    <p class="text-gray-500 text-sm text-center md:text-left">
-      © 2024 Theni Offers & Coupons. All rights reserved.
-    </p>
-    <div class="flex space-x-6 mt-4 md:mt-0">
-      <a href="#" class="text-gray-500 hover:text-teal-600 text-sm">Privacy Policy</a>
-      <a href="#" class="text-gray-500 hover:text-teal-600 text-sm">Terms of Service</a>
-    </div>
-  </div>
+
+
+
 </footer>
+
+  <div class="mt-8"><p class="text-center text-gray-500 text-sm">© 2025 Theni Offers. All rights reserved.</p></div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -732,6 +1052,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+
 
 
 </body>
