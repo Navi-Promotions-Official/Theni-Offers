@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Theni Offers & Coupons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
+                        <i class="bi bi-geo-alt text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Theni Offers</h1>
+                        <p class="text-xs text-gray-500">& Coupons</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-900 hover:text-teal-600 font-medium">Home</a>
+                    <a href="#" class="text-gray-900 hover:text-teal-600 font-medium">Offers</a>
+                    <a href="#" class="text-gray-900 hover:text-teal-600 font-medium">Stores</a>
+                    <a href="#" class="text-gray-900 hover:text-teal-600 font-medium">About Us</a>
+                    <a href="#" class="text-gray-900 hover:text-teal-600 font-medium">Contact Us</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <div class="w-5 h-5 rounded-full bg-gray-300"></div>
+                        <span class="text-sm font-medium">EN</span>
+                    </div>
+                    <button
+                        class="bg-teal-600 text-white px-4 py-2 rounded-md font-medium hover:bg-teal-700 transition-colors">
+                        Get Updates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Offers</h2>
+      <p class="text-gray-600 mb-8">Discover amazing deals from local stores</p>
+
+      <!-- Search + Filter -->
+      <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <div class="flex-1 relative">
+          <input id="searchInput" type="text"
+            placeholder="Search offers..."
+            class="w-full pl-4 pr-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent" />
+        </div>
+        <select id="categoryFilter"
+          class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
+          <option>All Categories</option>
+          <option>Fashion</option>
+          <option>Electronics</option>
+          <option>Groceries</option>
+          <option>Food</option>
+        </select>
+      </div>
+
+      <!-- Grid -->
+      <div id="offersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="couponModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-lg shadow-lg max-w-lg w-full relative overflow-hidden">
+      <button onclick="closeModal()" 
+        class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl z-10 bg-white rounded-full p-1 shadow-md">
+        ✕
+      </button>
+      <img id="modalImage" class="w-full h-64 object-cover" />
+      <div class="p-6 space-y-4">
+        <h3 id="modalTitle" class="text-xl font-semibold text-gray-900"></h3>
+        <div class="text-sm text-gray-600">🏬 <span id="modalStore"></span></div>
+        <div class="text-sm text-gray-600">🏷️ <span id="modalCategory"></span></div>
+        <div class="text-sm text-gray-600">⏳ <span id="modalTime"></span></div>
+        <p id="modalDesc" class="text-sm text-gray-700 bg-gray-50 p-3 rounded-md"></p>
+        <div class="flex items-center justify-between">
+          <span id="modalTier" class="text-white px-3 py-1 rounded-full text-sm font-medium"></span>
+          <span id="modalStatus" class="text-white px-3 py-1 rounded-full text-sm font-medium"></span>
+        </div>
+        <button id="downloadBtn"
+          class="w-full py-3 rounded-md font-medium transition-colors bg-teal-500 text-white hover:bg-teal-600 flex items-center justify-center space-x-2">
+          ⬇️ <span>Download Coupon as PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="bg-white border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Logo and Description -->
+      <div class="md:col-span-1">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3c0 3 3 6 3 6s3-3 3-6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.657 1.343-3 3-3s3 1.343 3 3c0 3-3 6-3 6s-3-3-3-6z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">Theni Offers</h3>
+            <p class="text-xs text-gray-500">& Coupons</p>
+          </div>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Your local marketplace for amazing deals and coupons from Theni's best stores.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-600 hover:text-teal-600 text-sm">Home</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-teal-600 text-sm">Offers</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-teal-600 text-sm">Stores</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-teal-600 text-sm">About Us</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-teal-600 text-sm">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span class="text-gray-600 text-sm">+91 98765 43210</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span class="text-gray-600 text-sm">hello@thenioffers.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Follow Us -->
+     <div>
+  <h4 class="font-semibold text-gray-900 mb-4">Follow Us</h4>
+  <div class="flex space-x-3">
+    <!-- Facebook -->
+    <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-teal-100 transition-colors">
+      <svg class="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 
+        24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.413c0-3.1 
+        1.894-4.788 4.659-4.788 1.325 0 2.464.099 
+        2.797.143v3.24l-1.92.001c-1.505 
+        0-1.797.716-1.797 1.767v2.317h3.59l-.467 
+        3.696h-3.123V24h6.116C23.403 
+        24 24 23.403 24 22.674V1.326C24 
+        .597 23.403 0 22.675 0z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-teal-100 transition-colors">
+      <svg class="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 
+        4.85.07 3.252.148 4.771 1.691 4.919 
+        4.919.058 1.265.069 1.645.069 
+        4.849s-.012 3.584-.069 4.849c-.149 
+        3.225-1.664 4.771-4.919 
+        4.919-1.266.058-1.645.07-4.85.07s-3.584-.012-4.849-.07c-3.225-.149-4.771-1.664-4.919-4.919C2.175 
+        15.596 2.163 15.216 2.163 
+        12s.012-3.584.07-4.849C2.382 3.926 
+        3.897 2.38 7.122 2.232 8.387 
+        2.175 8.767 2.163 12 2.163zm0 
+        1.838c-3.178 0-3.552.012-4.796.07-2.593.119-3.801 
+        1.327-3.92 3.92-.058 1.244-.07 1.618-.07 
+        4.796s.012 3.552.07 4.796c.119 2.593 
+        1.327 3.801 3.92 3.92 1.244.058 1.618.07 
+        4.796.07s3.552-.012 4.796-.07c2.593-.119 
+        3.801-1.327 3.92-3.92.058-1.244.07-1.618.07-4.796s-.012-3.552-.07-4.796c-.119-2.593-1.327-3.801-3.92-3.92-1.244-.058-1.618-.07-4.796-.07zm0 
+        3.873a5.127 5.127 0 1 1 0 
+        10.254 5.127 5.127 0 0 1 0-10.254zm0 
+        8.449a3.322 3.322 0 1 0 0-6.644 3.322 
+        3.322 0 0 0 0 6.644zm6.406-11.845a1.2 
+        1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 
+        2.4 0z"/>
+      </svg>
+    </a>
+
+    <!-- Twitter -->
+    <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-teal-100 transition-colors">
+      <svg class="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 
+        1.014-.609 1.794-1.574 2.163-2.723-.951.564-2.005.974-3.127 
+        1.195-.897-.959-2.178-1.555-3.594-1.555-2.717 
+        0-4.924 2.206-4.924 
+        4.924 0 .39.045.765.127 
+        1.124-4.09-.205-7.719-2.165-10.148-5.144-.424.729-.666 
+        1.577-.666 2.475 0 1.708.869 3.216 2.188 
+        4.099-.807-.026-1.566-.248-2.229-.616v.062c0 
+        2.385 1.693 4.374 3.946 
+        4.827-.413.111-.849.171-1.296.171-.317 
+        0-.626-.03-.928-.086.627 1.956 2.444 
+        3.379 4.6 3.419-1.68 1.316-3.809 
+        2.101-6.102 2.101-.396 
+        0-.787-.023-1.175-.067 2.179 1.397 
+        4.768 2.212 7.548 2.212 9.142 
+        0 14.307-7.721 13.995-14.646.962-.694 
+        1.797-1.562 2.457-2.549z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+    <!-- Bottom Footer -->
+  <div class="w-full flex flex-col md:flex-row justify-between items-center px-6 py-4">
+    <p class="text-gray-500 text-sm text-center md:text-left">
+      © 2024 Theni Offers & Coupons. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+      <a href="#" class="text-gray-500 hover:text-teal-600 text-sm">Privacy Policy</a>
+      <a href="#" class="text-gray-500 hover:text-teal-600 text-sm">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const { jsPDF } = window.jspdf;
+
+    const offers = [
+      {
+        id: 1,
+        title: '50% Off on Summer Collection',
+        store: 'Saravana Stores',
+        category: 'Fashion',
+        description: 'Get amazing discounts on our latest summer fashion collection.',
+        membershipTier: 'Platinum',
+        status: 'Expired',
+        timeLeft: 'Expired',
+        image: 'https://images.pexels.com/photos/974911/pexels-photo-974911.jpeg?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        id: 2,
+        title: 'Buy 1 Get 1 Free Pizza',
+        store: 'Dominos',
+        category: 'Food',
+        description: 'Enjoy delicious pizzas with our exclusive BOGO offer.',
+        membershipTier: 'Gold',
+        status: 'Active',
+        timeLeft: '2 Days Left',
+        image: 'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        id: 3,
+        title: 'Flat 30% Off on Electronics',
+        store: 'Reliance Digital',
+        category: 'Electronics',
+        description: 'Upgrade your gadgets with big savings on top brands.',
+        membershipTier: 'Diamond',
+        status: 'Active',
+        timeLeft: '5 Days Left',
+        image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        id: 4,
+        title: '20% Off on Groceries',
+        store: 'Big Bazaar',
+        category: 'Groceries',
+        description: 'Save big on daily essentials at your nearest Big Bazaar outlet.',
+        membershipTier: 'Gold',
+        status: 'Active',
+        timeLeft: '1 Week Left',
+        image: 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=400'
+      }
+    ];
+
+    let selectedOffer = null;
+
+    function tierColor(tier) {
+      return tier === 'Platinum' ? 'bg-purple-500' :
+             tier === 'Gold' ? 'bg-blue-500' :
+             tier === 'Diamond' ? 'bg-indigo-500' : 'bg-gray-500';
+    }
+    function statusColor(status) {
+      return status === 'Active' ? 'bg-green-600' : 'bg-red-500';
+    }
+
+    function renderOffers() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const category = document.getElementById('categoryFilter').value;
+      const grid = document.getElementById('offersGrid');
+      grid.innerHTML = '';
+
+      offers
+        .filter(o =>
+          (o.title.toLowerCase().includes(search) || o.store.toLowerCase().includes(search)) &&
+          (category === 'All Categories' || o.category === category)
+        )
+        .forEach(offer => {
+          const card = document.createElement('div');
+          card.className = "bg-white rounded-lg shadow-sm border hover:shadow-md transition-all duration-300 hover:scale-[1.02]";
+          card.innerHTML = `
+            <div class="h-48 rounded-t-lg relative overflow-hidden bg-cover bg-center" style="background-image:url('${offer.image}')">
+              <div class="absolute top-3 right-3">
+                <span class="${tierColor(offer.membershipTier)} text-white px-3 py-1 rounded-full text-sm font-medium">${offer.membershipTier}</span>
+              </div>
+              <div class="absolute bottom-3 left-3">
+                <span class="${statusColor(offer.status)} text-white px-3 py-1 rounded-full text-sm font-medium">${offer.status}</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center space-x-2 mb-2 text-sm text-gray-600">🏬 ${offer.store}</div>
+              <h3 class="font-semibold text-gray-900 mb-2">${offer.title}</h3>
+              <p class="text-sm text-gray-600 mb-4">${offer.description}</p>
+              <div class="flex items-center justify-between mb-4 text-sm text-gray-600">
+                <span>🏷️ ${offer.category}</span>
+                <span>⏳ ${offer.timeLeft}</span>
+              </div>
+              <button class="w-full py-3 rounded-md font-medium flex items-center justify-center ${offer.status==='Expired' ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : 'bg-teal-500 text-white hover:bg-teal-600'}">
+                ⬇️ Download Coupon
+              </button>
+            </div>
+          `;
+          const btn = card.querySelector('button');
+          if (offer.status !== 'Expired') {
+            btn.addEventListener('click', () => openModal(offer));
+          }
+          grid.appendChild(card);
+        });
+    }
+
+    function openModal(offer) {
+      selectedOffer = offer;
+      document.getElementById('modalImage').src = offer.image;
+      document.getElementById('modalTitle').textContent = offer.title;
+      document.getElementById('modalStore').textContent = offer.store;
+      document.getElementById('modalCategory').textContent = offer.category;
+      document.getElementById('modalTime').textContent = offer.timeLeft;
+      document.getElementById('modalDesc').textContent = offer.description;
+
+      const tierEl = document.getElementById('modalTier');
+      tierEl.textContent = `${offer.membershipTier} Member`;
+      tierEl.className = `${tierColor(offer.membershipTier)} text-white px-3 py-1 rounded-full text-sm font-medium`;
+
+      const statusEl = document.getElementById('modalStatus');
+      statusEl.textContent = offer.status;
+      statusEl.className = `${statusColor(offer.status)} text-white px-3 py-1 rounded-full text-sm font-medium`;
+
+      document.getElementById('couponModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('couponModal').classList.add('hidden');
+    }
+
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      if (!selectedOffer) return;
+      const doc = new jsPDF();
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const margin = 20;
+
+      // Header
+      doc.setFillColor(20, 184, 166);
+      doc.rect(0, 0, pageWidth, 40, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(24);
+      doc.setFont('helvetica', 'bold');
+      doc.text('COUPON DETAILS', pageWidth / 2, 25, { align: 'center' });
+
+      doc.setTextColor(0, 0, 0);
+      let y = 60;
+      doc.setFontSize(18).setFont('helvetica', 'bold');
+      doc.text(selectedOffer.title, margin, y);
+      y += 20;
+
+      doc.setFontSize(14).setFont('helvetica', 'normal');
+      doc.text(`Store: ${selectedOffer.store}`, margin, y); y+=15;
+      doc.text(`Category: ${selectedOffer.category}`, margin, y); y+=15;
+      doc.text('Description:', margin, y); y+=10;
+
+      const split = doc.splitTextToSize(selectedOffer.description, pageWidth-2*margin);
+      doc.text(split, margin, y);
+      y += split.length*5 + 10;
+
+      doc.text(`Membership Tier: ${selectedOffer.membershipTier}`, margin, y); y+=15;
+      doc.text(`Status: ${selectedOffer.status}`, margin, y); y+=15;
+      doc.text(`Time Left: ${selectedOffer.timeLeft}`, margin, y); y+=30;
+
+      doc.setFont('helvetica', 'bold');
+      doc.text('Terms & Conditions:', margin, y); y+=10;
+      doc.setFontSize(10).setFont('helvetica', 'normal');
+      [
+        '• This coupon is valid only at participating stores',
+        '• Cannot be combined with other offers',
+        '• Valid only for the specified time period',
+        '• Store reserves the right to modify or cancel the offer',
+        '• Original coupon must be presented at the time of purchase'
+      ].forEach(t => { doc.text(t, margin, y); y+=8; });
+
+      // Footer
+      y = doc.internal.pageSize.getHeight()-30;
+      doc.setFillColor(229,231,235);
+      doc.rect(0,y-10,pageWidth,40,'F');
+      doc.setTextColor(75,85,99).setFontSize(10);
+      doc.text('Generated on: '+ new Date().toLocaleDateString(), margin, y);
+      doc.text('Valid coupon - Present at store', pageWidth-margin, y, {align:'right'});
+
+      doc.save(`${selectedOffer.title.replace(/[^a-zA-Z0-9]/g, '_')}_coupon.pdf`);
+      closeModal();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', renderOffers);
+    document.getElementById('categoryFilter').addEventListener('change', renderOffers);
+
+    renderOffers();
+  </script>
+</body>
+</html>
