@@ -536,25 +536,25 @@
   text-align: center;
   background: #f9f9f9;
 }
-
+ 
 .feedback-section h2 {
   margin-bottom: 30px;
   font-size: 26px;
   font-weight: bold;
   color: #333;
 }
-
+ 
 .feedback-carousel {
   overflow: hidden;
   width: 80%;
   margin: auto;
 }
-
+ 
 .carousel-track {
   display: flex;
   transition: transform 0.8s ease-in-out;
 }
-
+ 
 .feedback-card {
   flex: 0 0 calc(50% - 20px); /* subtract margins so 2 fit perfectly */
   margin: 10px;
@@ -566,4 +566,5 @@
   font-weight: 500;
   box-sizing: border-box;
 }
+ 
 
