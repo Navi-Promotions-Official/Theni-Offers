@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f4f7fa;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .products-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.product-item {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 120px;
+  padding: 15px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-item i {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.product-item span {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+.product-item:hover {
+  background: #007bff;
+  color: white;
+}
+
+.product-item:hover i {
+  color: white;
+}
+
+    .store-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .icon-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8f9fa;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .icon-box i {
+      color: #e63946;
+    }
+    .host-profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .btn-custom {
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .social-icons i {
+      font-size: 18px;
+      margin: 0 8px;
+      color: #555;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .social-icons i:hover {
+      color: #e63946;
+    }
+    .price-tag {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .price-tag i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: #e63946;
+    }
+
+    .vendor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vendor-card .profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+}
+
+.btn-danger-soft {
+  background: #fde2e2;
+  color: #d9534f;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-danger-soft:hover {
+  background: #d9534f;
+  color: #fff;
+}
+
+.btn-success-soft {
+  background: #d4edda;
+  color: #28a745;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-success-soft:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.contact-box i {
+  font-size: 18px;
+}
+
+.store-card ul {
+  list-style: none;  /* removes bullets */
+  padding-left: 0;   /* removes left padding */
+  margin: 0;         /* optional, tighter spacing */
+}
+
+.store-card li {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.store-card li i {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.store-card li:hover {
+  transform: translateX(6px);
+}
+
+.store-card li:hover i {
+  transform: scale(1.2);
+  color: #198754; /* Bootstrap green */
+}
+
+/* Gallery Section */
+.gallery-carousel {
+  width: 100%;
+  max-width: 800px; /* Minimized width */
+  height: 180px; /* Minimized height */
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 10px;
+  animation: scrollGallery 20s linear infinite;
+}
+
+.gallery-track img {
+  width: 300px;  /* control width of each image */
+  height: 250px; /* control height of each image */
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Animation for infinite scroll */
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <div class="row g-4">
+    
+<!-- Left Column -->
+<div class="col-lg-8">
+
+  <!-- Top Info -->
+  <div class="store-card d-flex flex-wrap gap-3">
+  <div class="icon-box"><i class="fa-solid fa-bullhorn"></i> Expert in Promotions</div>
+  <div class="icon-box"><i class="fa-solid fa-laptop-code"></i> Digital Marketing & Branding</div>
+  <div class="icon-box"><i class="fa-solid fa-layer-group"></i> 360° Marketing Solutions</div>
+</div>
+
+
+  <!-- Description -->
+  <div class="store-card">
+    <h5>Description</h5>
+    <p>
+      Navi Promotions is a digital marketing and branding agency based in Theni, Tamil Nadu. They specialize in empowering businesses with tailored digital strategies, cutting-edge solutions, and data-driven marketing approaches to drive growth and success.
+    </p>
+  </div>
+
+  <!-- Services -->
+<div class="store-card">
+  <h5>Services Offered</h5>
+  <ul style="list-style:none; padding-left:0;">
+    <li><i class="fa-brands fa-facebook text-success me-2"></i> Social Media Marketing</li>
+    <li><i class="fa-solid fa-magnifying-glass-chart text-success me-2"></i> Search Engine Optimization (SEO)</li>
+    <li><i class="fa-solid fa-bullseye text-success me-2"></i> Pay-Per-Click (PPC) Advertising</li>
+    <li><i class="fa-solid fa-chart-line text-success me-2"></i> Digital Analytics & Reporting</li>
+
+    <li><i class="fa-solid fa-laptop-code text-success me-2"></i> Website Design & Development</li>
+    <li><i class="fa-solid fa-code text-success me-2"></i> Software Design & Development</li>
+    <li><i class="fa-solid fa-mobile-screen text-success me-2"></i> Mobile App Development</li>
+    <li><i class="fa-solid fa-server text-success me-2"></i> Web Hosting & Maintenance</li>
+
+    <li><i class="fa-solid fa-palette text-success me-2"></i> Graphic Designing</li>
+    <li><i class="fa-solid fa-video text-success me-2"></i> Video Production</li>
+    <li><i class="fa-solid fa-user-group text-success me-2"></i> Influencer Marketing</li>
+    <li><i class="fa-solid fa-camera-retro text-success me-2"></i> Product Photography</li>
+    <li><i class="fa-solid fa-comments text-success me-2"></i> Bulk SMS & WhatsApp Marketing</li>
+    <li><i class="fa-solid fa-pen-nib text-success me-2"></i> Content Creation</li>
+  </ul>
+</div>
+
+
+<!-- Products -->
+<div class="store-card products-card">
+  <h5>Products Available</h5>
+  <div class="products-list">
+    
+    <!-- Digital Marketing -->
+    <div class="product-item">
+      <i class="fas fa-bullhorn"></i> 
+      <span>Digital Marketing</span>
+    </div>
+
+    <!-- Web Development -->
+    <div class="product-item">
+      <i class="fas fa-laptop-code"></i>
+      <span>Web Development</span>
+    </div>
+
+    <!-- Promotional Kits -->
+    <div class="product-item">
+      <i class="fas fa-gift"></i>
+      <span>Promotional Kits</span>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<!-- Active Offers -->
+<div class="store-card">
+  <h5>Active Offers</h5>
+  <div class="row">
+    
+    <!-- Offer 1 -->
+    <div class="col-md-4">
+      <div class="price-tag">
+        <i class="fa-solid fa-comments"></i>
+        Free Consultations
+        <div class="text-muted small">On Home Décor</div>
+      </div>
+    </div>
+    
+    <!-- Offer 2 -->
+    <div class="col-md-4">
+      <div class="price-tag">
+        <i class="fa-solid fa-shoe-prints"></i>
+        Buy 2 Get 1 Free
+        <div class="text-muted small">On Footwear</div>
+      </div>
+    </div>
+
+    <!-- Offer 3 (example extra one) -->
+    <div class="col-md-4">
+      <div class="price-tag">
+        <i class="fa-solid fa-truck-fast"></i>
+        Free Delivery
+        <div class="text-muted small">On Orders Above ₹999</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Gallery -->
+<!-- Gallery Section -->
+<div class="store-card">
+  <h5 class="mb-3">Gallery</h5>
+  <div class="gallery-carousel">
+    <div class="gallery-track">
+      <img src="img/pk31.JPG" alt="Gallery 1">
+      <img src="img/pk48.jpg" alt="Gallery 2">
+      <img src="img/tamilsangu.png" alt="Gallery 3">
+      <img src="img/xenex.png" alt="Gallery 4">
+      <!-- Duplicate for infinite scroll -->
+      <img src="img/pk31.JPG" alt="Gallery 1">
+      <img src="img/pk48.jpg" alt="Gallery 2">
+      <img src="img/tamilsangu.png" alt="Gallery 3">
+      <img src="img/xenex.png" alt="Gallery 4">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Specialities -->
+<div class="store-card">
+  <h5>Specialities</h5>
+  <ul class="list-unstyled mb-0">
+    <li><i class="fas fa-layer-group text-primary"></i> All-in-One Digital Solutions</li>
+    <li><i class="fas fa-tags text-success"></i> Affordable Expertise</li>
+    <li><i class="fas fa-users-cog text-info"></i> Seasoned & Specialized Team</li>
+    <li><i class="fas fa-handshake text-warning"></i> Client-Centric, Ethical Approach</li>
+    <li><i class="fas fa-chart-line text-danger"></i> Proven Growth Metrics</li>
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+
+    <!-- Right Column -->
+<div class="col-lg-4">
+
+
+  <div class="vendor-card text-center p-3">
+
+    <!-- Profile -->
+    <img src="img/vishnu.webp" class="profile-img mb-2" alt="Vendor">
+    <p class="text-muted mb-0">Hosted By</p>
+    <h6 class="fw-bold">Naga Vishnu</h6>
+
+    <!-- Buttons -->
+    <!-- <div class="d-flex justify-content-center gap-2 my-3">
+      <button class="btn btn-sm btn-danger-soft">
+        <i class="fa-solid fa-envelope"></i> Send Message
+      </button>
+      <button class="btn btn-sm btn-success-soft">
+        <i class="fa-solid fa-user-plus"></i> Follow Vendor
+      </button>
+    </div> -->
+
+    <!-- Contact Info -->
+    <div class="contact-box">
+      <i class="fa-solid fa-envelope text-danger"></i>
+      <div>
+        <small class="text-muted">Email</small>
+        <p class="mb-0">info@navipromotions.in</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <i class="fa-solid fa-phone text-danger"></i>
+      <div>
+        <small class="text-muted">Phone No.</small>
+        <p class="mb-0">+91 9500756881</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <i class="fa-solid fa-globe text-danger"></i>
+      <div>
+        <small class="text-muted">Website</small>
+        <p class="mb-0"><a href="https://navipromotions.in/" class="text-decoration-none">navipromotions.in</a></p>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="d-flex justify-content-center gap-3 mt-3">
+      <a href="https://www.facebook.com/navipromotions.in"><i class="fab fa-facebook fa-lg text-primary"></i></a>
+      <a href="https://www.instagram.com/navipromotions.in"><i class="fab fa-instagram fa-lg text-danger"></i></a>
+      <a href="https://www.linkedin.com/company/navipromotions"><i class="fab fa-linkedin fa-lg text-info"></i></a>
+
+    </div>
+
+  </div>
+
+  <!-- Google Map Card -->
+<div class="card shadow-sm rounded-3 mt-4">
+  <div class="card-body p-2">
+    <!-- Title -->
+    <h5 class="card-title px-3 pt-3 mb-2 text-center">Location</h5>
+    <!-- Map -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7858.407176839774!2d77.45765879409537!3d10.000035276291223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07136f53fa6487%3A0xe56a6547def1a0e5!2sPalani%20Chettipatti%2C%20Tamil%20Nadu%20625531!5e0!3m2!1sen!2sin!4v1755778639279!5m2!1sen!2sin" 
+      width="100%" 
+      height="250" 
+      style="border:0; border-radius: 0 0 12px 12px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+</body>
+</html>
