@@ -94,7 +94,7 @@ searchInput.addEventListener("input", function () {
 
  // Feedback Section
 
-const track = document.querySelector('.carousel-track');
+ const track = document.querySelector('.carousel-track');
 const cards = document.querySelectorAll('.feedback-card');
 const totalCards = cards.length;
 let index = 0;
