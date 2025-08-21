@@ -94,15 +94,15 @@ searchInput.addEventListener("input", function () {
 
  // Feedback Section
 
-const track = document.querySelector('.carousel-track');
+ const track = document.querySelector('.carousel-track');
 const cards = document.querySelectorAll('.feedback-card');
 const totalCards = cards.length;
 let index = 0;
- 
+
 function moveCarousel() {
   index += 2; // move 2 cards at once
   if (index >= totalCards) index = 0;
   track.style.transform = `translateX(-${index * 50}%)`;
 }
- 
+
 setInterval(moveCarousel, 4000); // change every 4s
