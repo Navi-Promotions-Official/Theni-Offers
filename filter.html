@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theni Offers</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<style>
+    /* Base */
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  color: #333;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+.flex-center { display: flex; align-items: center; gap: .5rem; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+/* Header */
+.header { background: #fff; border-bottom: 1px solid #ddd; padding: 1rem 0; }
+.logo-circle { width: 40px; height: 40px; background: teal; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
+
+/* Hero */
+.hero { background: linear-gradient(90deg, teal, steelblue); color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; }
+.hero h2 { font-size: 2rem; margin-bottom: .5rem; }
+.hero p { margin-bottom: 1rem; }
+.hero-stats { display: flex; gap: 2rem; }
+
+/* Filters */
+.filters { background: #fff; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.filters input, .filters select { padding: .75rem; border: 1px solid #ccc; border-radius: 6px; flex: 1; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1.5rem; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: box-shadow .3s; }
+.card:hover { box-shadow: 0 4px 6px rgba(0,0,0,.1); }
+.card img { width: 100%; height: 160px; object-fit: cover; }
+.card-body { padding: 1rem; }
+.card-body h3 { font-size: 1rem; margin-bottom: .5rem; }
+.tag { background: #eee; padding: .25rem .5rem; border-radius: 4px; font-size: .8rem; }
+.btn { margin-top: .5rem; padding: .5rem 1rem; border: none; border-radius: 6px; background: teal; color: white; cursor: pointer; }
+.btn:disabled { background: #ccc; cursor: not-allowed; }
+
+/* FAQ */
+.faq { margin-top: 3rem; background: #fff; padding: 2rem; border-radius: 8px; }
+.faq h3 { margin-bottom: 1rem; }
+.faq-item { border-bottom: 1px solid #ddd; }
+.faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1rem; font-weight: bold; cursor: pointer; }
+.faq-answer { display: none; padding: 0 1rem 1rem; color: #555; }
+.faq-answer.show { display: block; }
+
+/* Footer */
+.footer { background: #111; color: #bbb; padding: 2rem 1rem; margin-top: 2rem; }
+.footer h4 { color: #fff; margin-bottom: .5rem; }
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin: .25rem 0; }
+.footer a { color: #bbb; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer-bottom { text-align: center; margin-top: 1rem; font-size: .9rem; }
+
+/* Grid-4 */
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+
+</style>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container flex-between">
+      <div class="logo flex-center">
+        <div class="logo-circle"><i class="bi bi-shop text-white"></i></div>
+        <div>
+          <h1>Theni Offers</h1>
+          <p>Best deals in town</p>
+        </div>
+      </div>
+      <div class="location flex-center">
+        <i class="bi bi-geo-alt"></i>
+        <span>Theni, Tamil Nadu</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Discover Amazing Deals in Theni</h2>
+      <p>Get exclusive discounts and offers from your favorite local stores. Save money while supporting local businesses!</p>
+      <div class="hero-stats">
+        <div><i class="bi bi-shop"></i> 150+ Partner Stores</div>
+        <div><i class="bi bi-ticket"></i> 500+ Active Offers</div>
+        <div><i class="bi bi-people"></i> 10,000+ Happy Customers</div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <input type="text" id="searchInput" placeholder="Search offers...">
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Food">Food</option>
+        <option value="Home">Home</option>
+      </select>
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="Saravana Stores">Saravana Stores</option>
+        <option value="Dominos">Dominos</option>
+        <option value="Reliance Digital">Reliance Digital</option>
+        <option value="Big Bazaar">Big Bazaar</option>
+        <option value="Home Centre">Home Centre</option>
+        <option value="Theni Electronics Hub">Theni Electronics Hub</option>
+        <option value="Fresh Mart Grocery">Fresh Mart Grocery</option>
+      </select>
+      <select id="offerFilter">
+        <option value="">All Offers</option>
+        <option value="50% Off on Summer Collection">50% Off on Summer Collection</option>
+        <option value="Buy 1 Get 1 Free Pizza">Buy 1 Get 1 Free Pizza</option>
+        <option value="Flat 30% Off on Electronics">Flat 30% Off on Electronics</option>
+        <option value="20% Off on Groceries">20% Off on Groceries</option>
+        <option value="30% Off Fashion Accessories">30% Off Fashion Accessories</option>
+        <option value="Home Decor Sale">Home Decor Sale</option>
+      </select>
+    </section>
+
+    <!-- Offers Grid -->
+    <section id="offersGrid" class="grid">
+      <div class="card" data-title="50% Off on Summer Collection" data-store="Saravana Stores" data-category="Fashion">
+        <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg" alt="">
+        <div class="card-body">
+          <h3>50% Off on Summer Collection</h3>
+          <p>Saravana Stores - Amazing discounts on summer fashion.</p>
+          <span class="tag">Fashion</span>
+          <button class="btn" disabled>Expired</button>
+        </div>
+      </div>
+      <div class="card" data-title="Buy 1 Get 1 Free Pizza" data-store="Dominos" data-category="Food">
+        <img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg" alt="">
+        <div class="card-body">
+          <h3>Buy 1 Get 1 Free Pizza</h3>
+          <p>Dominos - Delicious pizzas with our BOGO offer.</p>
+          <span class="tag">Food</span>
+          <button class="btn">Download Coupon</button>
+        </div>
+      </div>
+      <!-- Repeat other cards -->
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <button class="faq-question">How do I redeem a coupon?</button>
+        <div class="faq-answer">Show the coupon code at checkout in participating stores.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use multiple coupons?</button>
+        <div class="faq-answer">Usually only one coupon per transaction unless stated.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container grid-4">
+      <div>
+        <h4>Theni Offers</h4>
+        <p>Your one-stop destination for best deals in Theni.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Partner Stores</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li>Food & Dining</li>
+          <li>Fashion</li>
+          <li>Electronics</li>
+          <li>Groceries</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="bi bi-phone"></i> +91 98765 43210</p>
+        <p><i class="bi bi-envelope"></i> info@thenioffers.com</p>
+        <p><i class="bi bi-geo-alt"></i> Theni, Tamil Nadu</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2024 Theni Offers. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const locationFilter = document.getElementById("locationFilter");
+    const offerFilter = document.getElementById("offerFilter");
+    const offersGrid = document.getElementById("offersGrid");
+    const offerCards = offersGrid.querySelectorAll(".card");
+
+    function filterOffers() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
+      const selectedLocation = locationFilter.value;
+      const selectedOffer = offerFilter.value;
+
+      offerCards.forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        const store = card.dataset.store;
+        const category = card.dataset.category;
+
+        let matchesSearch = title.includes(searchText) || store.toLowerCase().includes(searchText);
+        let matchesCategory = !selectedCategory || category === selectedCategory;
+        let matchesLocation = !selectedLocation || store === selectedLocation;
+        let matchesOffer = !selectedOffer || card.dataset.title === selectedOffer;
+
+        if (matchesSearch && matchesCategory && matchesLocation && matchesOffer) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    searchInput.addEventListener("input", filterOffers);
+    categoryFilter.addEventListener("change", filterOffers);
+    locationFilter.addEventListener("change", filterOffers);
+    offerFilter.addEventListener("change", filterOffers);
+
+    // FAQ Toggle
+    document.querySelectorAll(".faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        btn.nextElementSibling.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>

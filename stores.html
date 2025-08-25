@@ -51,31 +51,25 @@
     </div>
 
     <!-- Category Filters -->
-    <div class="flex flex-wrap gap-3 mb-10">
-      <button class="px-4 py-2 rounded-md bg-teal-600 text-white font-medium">All</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Food & Dining</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Fashion</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Electronics</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Groceries</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Beauty & Wellness</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Pharmacy</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Home & Kitchen</button>
-      <button class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Cafes & Bakeries</button>
+    <div id="category-filters" class="flex flex-wrap gap-3 mb-10">
+      <button data-category="all" class="px-4 py-2 rounded-md bg-teal-600 text-white font-medium">All</button>
+      <button data-category="Food & Dining" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Food & Dining</button>
+      <button data-category="Fashion" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Fashion</button>
+      <button data-category="Electronics" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Electronics</button>
+      <button data-category="Groceries" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Groceries</button>
+      <button data-category="Beauty & Wellness" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Beauty & Wellness</button>
+      <button data-category="Pharmacy" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Pharmacy</button>
+      <button data-category="Home & Kitchen" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Home & Kitchen</button>
+      <button data-category="Cafes & Bakeries" class="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">Cafes & Bakeries</button>
     </div>
 
     <!-- Store Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-      <!-- Card 1 -->
-      <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <!-- Badge -->
+    <div id="store-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Example Store Card -->
+      <div class="store-card bg-white rounded-lg border shadow-sm hover:shadow-md transition relative"
+           data-category="Beauty & Wellness">
         <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Platinum</span>
-        
-        <!-- Image -->
         <img src="img/3.png" alt="Shobi Makeovers" class="h-40 w-full object-cover rounded-t-lg">
-        
-        <!-- Content -->
         <div class="p-5">
           <div class="flex items-center mb-3">
             <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
@@ -95,135 +89,62 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-            <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Diamond</span>
+      <!-- Another Example -->
+      <div class="store-card bg-white rounded-lg border shadow-sm hover:shadow-md transition relative"
+           data-category="Digital Marketing">
+        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Diamond</span>
         <img src="img/1.png" alt="Navi Promotions" class="h-40 w-full object-cover rounded-t-lg">
-            <div class="p-5">
-              <div class="flex items-center mb-3">
-                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                  <span class="text-gray-500 text-sm">T</span>
-                </div>
-                <div class="ml-3">
-                  <h3 class="text-lg font-semibold text-gray-900">Navi Promotion</h3>
-                  <p class="text-sm text-gray-500">Digital Marketing</p>
-                </div>
-              </div>
-              <div class="flex items-center justify-between">
-                <p class="text-sm text-gray-700">
-                  <span class="font-semibold">4.8</span> (156)
-                </p>
-                <a href="navipromotion-store.html" class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</a>
-              </div>
-            </div>
-          </div>
-
-      <!-- Card 3 -->
-      <!-- <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Gold</span>
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
-        </div>
         <div class="p-5">
           <div class="flex items-center mb-3">
             <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">F</span>
+              <span class="text-gray-500 text-sm">T</span>
             </div>
             <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Fresh Mart Grocery</h3>
-              <p class="text-sm text-gray-500">Groceries</p>
+              <h3 class="text-lg font-semibold text-gray-900">Navi Promotion</h3>
+              <p class="text-sm text-gray-500">Digital Marketing</p>
             </div>
           </div>
           <div class="flex items-center justify-between">
             <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.0</span> (89)
+              <span class="font-semibold">4.8</span> (156)
             </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
+            <a href="navipromotion-store.html"
+              class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</a>
           </div>
         </div>
-      </div> -->
-
-      <!-- Card 4 -->
-      <!-- <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Gold</span>
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
-        </div>
-        <div class="p-5">
-          <div class="flex items-center mb-3">
-            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">F</span>
-            </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Fresh Mart Grocery</h3>
-              <p class="text-sm text-gray-500">Groceries</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.0</span> (89)
-            </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
-          </div>
-        </div>
-      </div> -->
-
-
-      <!-- Card 5 -->
-      <!-- <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Gold</span>
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
-        </div>
-        <div class="p-5">
-          <div class="flex items-center mb-3">
-            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">F</span>
-            </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Fresh Mart Grocery</h3>
-              <p class="text-sm text-gray-500">Groceries</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.0</span> (89)
-            </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
-          </div>
-        </div>
-      </div> -->
-
-
-      <!-- Card 6 -->
-      <!-- <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition relative">
-        <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Gold</span>
-        <div class="h-40 bg-gray-100 flex items-center justify-center rounded-t-lg">
-          <i class="bi bi-image text-gray-400 text-4xl"></i>
-        </div>
-        <div class="p-5">
-          <div class="flex items-center mb-3">
-            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              <span class="text-gray-500 text-sm">F</span>
-            </div>
-            <div class="ml-3">
-              <h3 class="text-lg font-semibold text-gray-900">Fresh Mart Grocery</h3>
-              <p class="text-sm text-gray-500">Groceries</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-700">
-              ⭐ <span class="font-semibold">4.0</span> (89)
-            </p>
-            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100">View Store</button>
-          </div>
-        </div>
-      </div> -->
-
+      </div>
 
     </div>
   </div>
 </section>
+
+<!-- Filtering Script -->
+<script>
+  const buttons = document.querySelectorAll("#category-filters button");
+  const storeCards = document.querySelectorAll(".store-card");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // remove active styles from all buttons
+      buttons.forEach(b => b.classList.remove("bg-teal-600", "text-white"));
+      buttons.forEach(b => b.classList.add("border", "text-gray-700"));
+
+      // add active style to clicked one
+      btn.classList.add("bg-teal-600", "text-white");
+      btn.classList.remove("border", "text-gray-700");
+
+      const category = btn.getAttribute("data-category");
+
+      storeCards.forEach(card => {
+        if (category === "all" || card.getAttribute("data-category") === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
 
 
 

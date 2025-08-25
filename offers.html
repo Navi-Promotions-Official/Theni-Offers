@@ -43,192 +43,256 @@
     </header>
 
     <!-- Latest Offers Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Offers</h2>
-    <p class="text-gray-600 mb-8">Discover amazing deals from local stores</p>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Offers</h2>
+      <p class="text-gray-600 mb-8">Discover amazing deals from local stores</p>
 
-    <!-- Search and Filters -->
-    <div class="flex flex-col md:flex-row gap-4 mb-8">
-      <div class="flex-1 relative">
-        <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-        <input id="searchInput" type="text" placeholder="Search offers..."
-          class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent" />
-      </div>
-      <select
-        class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
-        <option>All Categories</option>
-        <option>Fashion</option>
-        <option>Electronics</option>
-        <option>Groceries</option>
-        <option>Home</option>
-      </select>
-    </div>
+      <!-- Search and Filters -->
+      <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <!-- Search -->
+        <div class="flex-1 relative">
+          <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input id="searchInput" type="text" placeholder="Search offers..."
+            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent" />
+        </div>
 
-    <!-- Offer Cards Grid -->
-    <div id="offersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Category Filter -->
+        <select id="categoryFilter"
+          class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
+          <option value="">All Categories</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Groceries">Groceries</option>
+          <option value="Food">Food</option>
+          <option value="Home">Home</option>
+        </select>
 
-  <!-- Card 1 -->
-  <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
-    data-title="50% Off on Summer Collection" data-store="Saravana Stores" data-category="Fashion">
-    <div class="relative">
-      <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-          <img src="img/savarana stores.png" alt="Saravana Stores Summer Collection" class="w-full h-full object-cover rounded-t-lg">
-        <div class="absolute top-3 right-3">
-          <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Platinum</span>
-        </div>
-        <div class="absolute bottom-3 left-3">
-          <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Expired</span>
-        </div>
-      </div>
-    </div>
-    <div class="p-4">
-      <div class="flex items-center space-x-2 mb-2">
-        <i class="bi bi-geo-alt text-gray-400"></i>
-        <span class="text-sm text-gray-600">Saravana Stores</span>
-      </div>
-      <h3 class="font-semibold text-gray-900 mb-2">50% Off on Summer Collection</h3>
-      <p class="text-sm text-gray-600 mb-4">Get amazing discounts on our latest summer fashion collection.</p>
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-tag text-gray-400"></i>
-          <span class="text-sm text-gray-600">Fashion</span>
-        </div>
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-clock text-gray-400"></i>
-          <span class="text-sm text-gray-600">Expired</span>
-        </div>
-      </div>
-      <button class="w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-gray-100 text-gray-500 cursor-not-allowed" disabled>
-        <i class="bi bi-download"></i>
-        <span>Download Coupon</span>
-      </button>
-    </div>
-  </div>
+        <!-- Location Filter -->
+        <select id="locationFilter"
+          class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
+          <option value="">All Locations</option>
+          <option value="Saravana Stores">Saravana Stores</option>
+          <option value="Dominos">Dominos</option>
+          <option value="Reliance Digital">Reliance Digital</option>
+          <option value="Big Bazaar">Big Bazaar</option>
+        </select>
 
-  <!-- Card 2 -->
-  <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
-    data-title="Buy 1 Get 1 Free Pizza" data-store="Dominos" data-category="Food">
-    <div class="relative">
-      <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-        <img src="img/dominos.png" alt="Dominos BOGO Pizza" class="w-full h-full object-cover rounded-t-lg">
-        <div class="absolute top-3 right-3">
-          <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
-        </div>
-        <div class="absolute bottom-3 left-3">
-          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
-        </div>
-      </div>
-    </div>
-    <div class="p-4">
-      <div class="flex items-center space-x-2 mb-2">
-        <i class="bi bi-geo-alt text-gray-400"></i>
-        <span class="text-sm text-gray-600">Dominos</span>
-      </div>
-      <h3 class="font-semibold text-gray-900 mb-2">Buy 1 Get 1 Free Pizza</h3>
-      <p class="text-sm text-gray-600 mb-4">Enjoy delicious pizzas with our exclusive BOGO offer.</p>
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-tag text-gray-400"></i>
-          <span class="text-sm text-gray-600">Food</span>
-        </div>
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-clock text-gray-400"></i>
-          <span class="text-sm text-gray-600">2 Days Left</span>
-        </div>
-      </div>
-    <button 
-        class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
-        data-img="img/dominos.png">
-        <i class="bi bi-download"></i>
-        <span>Download Coupon</span>
+        <!-- Offer Filter -->
+        <select id="offerFilter"
+          class="px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white">
+          <option value="">All Offers</option>
+          <option value="50% Off on Summer Collection">50% Off on Summer Collection</option>
+          <option value="Buy 1 Get 1 Free Pizza">Buy 1 Get 1 Free Pizza</option>
+          <option value="Flat 30% Off on Electronics">Flat 30% Off on Electronics</option>
+          <option value="20% Off on Groceries">20% Off on Groceries</option>
+        </select>
+
+        <!-- Clear Filters Button -->
+        <button id="clearFilters"
+          class="px-6 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors">
+          <i class="bi bi-x-circle"></i> Clear
         </button>
-    </div>
-  </div>
+      </div>
 
-  <!-- Card 3 -->
-  <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
-    data-title="Flat 30% Off on Electronics" data-store="Reliance Digital" data-category="Electronics">
-    <div class="relative">
-      <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-          <img src="img/Reliance.png" alt="Reliance Digital Electronics Offer" class="w-full h-full object-cover rounded-t-lg">
-        <div class="absolute top-3 right-3">
-          <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-medium">Diamond</span>
-        </div>
-        <div class="absolute bottom-3 left-3">
-          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
-        </div>
-      </div>
-    </div>
-    <div class="p-4">
-      <div class="flex items-center space-x-2 mb-2">
-        <i class="bi bi-geo-alt text-gray-400"></i>
-        <span class="text-sm text-gray-600">Reliance Digital</span>
-      </div>
-      <h3 class="font-semibold text-gray-900 mb-2">Flat 30% Off on Electronics</h3>
-      <p class="text-sm text-gray-600 mb-4">Upgrade your gadgets with big savings on top brands.</p>
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-tag text-gray-400"></i>
-          <span class="text-sm text-gray-600">Electronics</span>
-        </div>
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-clock text-gray-400"></i>
-          <span class="text-sm text-gray-600">5 Days Left</span>
-        </div>
-      </div>
-    <button 
-        class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
-        data-img="img/Reliance.png">
-        <i class="bi bi-download"></i>
-        <span>Download Coupon</span>
-        </button>
-    </div>
-  </div>
+      <!-- Results Counter -->
+      <div id="resultsCounter" class="mb-4 text-sm text-gray-600"></div>
 
-  <!-- Card 4 -->
-  <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
-    data-title="20% Off on Groceries" data-store="Big Bazaar" data-category="Groceries">
-    <div class="relative">
-      <div class="h-48 bg-gray-400 rounded-t-lg relative overflow-hidden">
-          <img src="img/Big Bazaar.png" alt="Big Bazaar Offer" class="w-full h-full object-cover rounded-t-lg">
-        <div class="absolute top-3 right-3">
-          <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
-        </div>
-        <div class="absolute bottom-3 left-3">
-          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
-        </div>
-      </div>
-    </div>
-    <div class="p-4">
-      <div class="flex items-center space-x-2 mb-2">
-        <i class="bi bi-geo-alt text-gray-400"></i>
-        <span class="text-sm text-gray-600">Big Bazaar</span>
-      </div>
-      <h3 class="font-semibold text-gray-900 mb-2">20% Off on Groceries</h3>
-      <p class="text-sm text-gray-600 mb-4">Save big on daily essentials at your nearest Big Bazaar outlet.</p>
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-tag text-gray-400"></i>
-          <span class="text-sm text-gray-600">Groceries</span>
-        </div>
-        <div class="flex items-center space-x-1">
-          <i class="bi bi-clock text-gray-400"></i>
-          <span class="text-sm text-gray-600">1 Week Left</span>
-        </div>
-      </div>
-    <button 
-        class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
-        data-img="img/Big Bazaar.png">
-        <i class="bi bi-download"></i>
-        <span>Download Coupon</span>
-        </button>
-    </div>
-  </div>
+      <!-- Offer Cards Grid -->
+      <div id="offersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-</div>
-  </div>
-</section>
+        <!-- Card 1 -->
+        <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+          data-title="50% Off on Summer Collection" data-store="Saravana Stores" data-category="Fashion"
+          data-status="expired">
+          <div class="relative">
+            <img src="img/savarana stores.png" alt="50% Off on Summer Collection"
+              class="h-48 w-full object-cover rounded-t-lg">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-20 rounded-t-lg"></div>
+
+            <!-- Badge: Platinum -->
+            <div class="absolute top-3 right-3">
+              <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Platinum</span>
+            </div>
+
+            <!-- Status: Expired -->
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Expired</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center space-x-2 mb-2">
+              <i class="bi bi-geo-alt text-gray-400"></i>
+              <span class="text-sm text-gray-600">Saravana Stores</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">50% Off on Summer Collection</h3>
+            <p class="text-sm text-gray-600 mb-4">Get amazing discounts on our latest summer fashion collection.</p>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-tag text-gray-400"></i>
+                <span class="text-sm text-gray-600">Fashion</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-clock text-gray-400"></i>
+                <span class="text-sm text-gray-600">Expired</span>
+              </div>
+            </div>
+            <button
+              class="w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-gray-100 text-gray-500 cursor-not-allowed"
+              disabled>
+              <i class="bi bi-download"></i>
+              <span>Download Coupon</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+          data-title="Buy 1 Get 1 Free Pizza" data-store="Dominos" data-category="Food" data-status="active">
+          <div class="relative">
+            <img src="img/dominos.png" alt="Buy 1 Get 1 Free Pizza" class="h-48 w-full object-cover rounded-t-lg">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-20 rounded-t-lg"></div>
+
+            <!-- Badge: Gold -->
+            <div class="absolute top-3 right-3">
+              <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
+            </div>
+
+            <!-- Status: Active -->
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center space-x-2 mb-2">
+              <i class="bi bi-geo-alt text-gray-400"></i>
+              <span class="text-sm text-gray-600">Dominos</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Buy 1 Get 1 Free Pizza</h3>
+            <p class="text-sm text-gray-600 mb-4">Enjoy delicious pizzas with our exclusive BOGO offer.</p>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-tag text-gray-400"></i>
+                <span class="text-sm text-gray-600">Food</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-clock text-gray-400"></i>
+                <span class="text-sm text-gray-600">2 Days Left</span>
+              </div>
+            </div>
+            <button
+              class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+              data-img="img/dominos.png">
+              <i class="bi bi-download"></i>
+              <span>Download Coupon</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+          data-title="Flat 30% Off on Electronics" data-store="Reliance Digital" data-category="Electronics"
+          data-status="active">
+          <div class="relative">
+            <img src="img/Reliance.png" alt="Flat 30% Off on Electronics" class="h-48 w-full object-cover rounded-t-lg">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-20 rounded-t-lg"></div>
+
+            <!-- Badge: Diamond -->
+            <div class="absolute top-3 right-3">
+              <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-medium">Diamond</span>
+            </div>
+
+            <!-- Status: Active -->
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center space-x-2 mb-2">
+              <i class="bi bi-geo-alt text-gray-400"></i>
+              <span class="text-sm text-gray-600">Reliance Digital</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Flat 30% Off on Electronics</h3>
+            <p class="text-sm text-gray-600 mb-4">Upgrade your gadgets with big savings on top brands.</p>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-tag text-gray-400"></i>
+                <span class="text-sm text-gray-600">Electronics</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-clock text-gray-400"></i>
+                <span class="text-sm text-gray-600">5 Days Left</span>
+              </div>
+            </div>
+            <button
+              class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+              data-img="img/Reliance.png">
+              <i class="bi bi-download"></i>
+              <span>Download Coupon</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="offer-card bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow"
+          data-title="20% Off on Groceries" data-store="Big Bazaar" data-category="Groceries" data-status="active">
+          <div class="relative">
+            <img src="img/Big Bazaar.png" alt="20% Off on Groceries" class="h-48 w-full object-cover rounded-t-lg">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-20 rounded-t-lg"></div>
+
+            <!-- Badge: Gold -->
+            <div class="absolute top-3 right-3">
+              <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Gold</span>
+            </div>
+
+            <!-- Status: Active -->
+            <div class="absolute bottom-3 left-3">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center space-x-2 mb-2">
+              <i class="bi bi-geo-alt text-gray-400"></i>
+              <span class="text-sm text-gray-600">Big Bazaar</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">20% Off on Groceries</h3>
+            <p class="text-sm text-gray-600 mb-4">Save big on daily essentials at your nearest Big Bazaar outlet.</p>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-tag text-gray-400"></i>
+                <span class="text-sm text-gray-600">Groceries</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <i class="bi bi-clock text-gray-400"></i>
+                <span class="text-sm text-gray-600">1 Week Left</span>
+              </div>
+            </div>
+            <button
+              class="download-btn w-full py-3 rounded-md font-medium transition-colors flex items-center justify-center space-x-2 bg-teal-500 text-white hover:bg-teal-600"
+              data-img="img/Big Bazaar.png">
+              <i class="bi bi-download"></i>
+              <span>Download Coupon</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results hidden">
+        <i class="bi bi-search text-4xl mb-4 block"></i>
+        <h3 class="text-xl font-semibold mb-2">No offers found</h3>
+        <p>Try adjusting your search criteria or clearing the filters.</p>
+      </div>
+    </div>
+  </section>
 
 <!-- Coupon Modal -->
 <div id="couponModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
@@ -495,6 +559,127 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('searchInput');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const locationFilter = document.getElementById('locationFilter');
+      const offerFilter = document.getElementById('offerFilter');
+      const clearFiltersBtn = document.getElementById('clearFilters');
+      const offersGrid = document.getElementById('offersGrid');
+      const noResultsDiv = document.getElementById('noResults');
+      const resultsCounter = document.getElementById('resultsCounter');
+
+      // Get all offer cards
+      const offerCards = document.querySelectorAll('.offer-card');
+
+      function filterOffers() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedCategory = categoryFilter.value;
+        const selectedLocation = locationFilter.value;
+        const selectedOffer = offerFilter.value;
+
+        let visibleCount = 0;
+
+        offerCards.forEach(card => {
+          const title = card.dataset.title.toLowerCase();
+          const store = card.dataset.store;
+          const category = card.dataset.category;
+
+          // Check search term (searches in title, store, and category)
+          const matchesSearch = searchTerm === '' ||
+            title.includes(searchTerm) ||
+            store.toLowerCase().includes(searchTerm) ||
+            category.toLowerCase().includes(searchTerm);
+
+          // Check category filter
+          const matchesCategory = selectedCategory === '' || category === selectedCategory;
+
+          // Check location filter
+          const matchesLocation = selectedLocation === '' || store === selectedLocation;
+
+          // Check offer filter
+          const matchesOffer = selectedOffer === '' || card.dataset.title === selectedOffer;
+
+          // Show/hide card based on all conditions
+          if (matchesSearch && matchesCategory && matchesLocation && matchesOffer) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Update results counter
+        updateResultsCounter(visibleCount);
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          offersGrid.style.display = 'none';
+          noResultsDiv.classList.remove('hidden');
+        } else {
+          offersGrid.style.display = 'grid';
+          noResultsDiv.classList.add('hidden');
+        }
+      }
+
+      function updateResultsCounter(count) {
+        const totalOffers = offerCards.length;
+        if (count === totalOffers) {
+          resultsCounter.textContent = `Showing all ${totalOffers} offers`;
+        } else {
+          resultsCounter.textContent = `Showing ${count} of ${totalOffers} offers`;
+        }
+      }
+
+      function clearAllFilters() {
+        searchInput.value = '';
+        categoryFilter.value = '';
+        locationFilter.value = '';
+        offerFilter.value = '';
+        filterOffers();
+      }
+
+      // Add event listeners
+      searchInput.addEventListener('input', filterOffers);
+      categoryFilter.addEventListener('change', filterOffers);
+      locationFilter.addEventListener('change', filterOffers);
+      offerFilter.addEventListener('change', filterOffers);
+      clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+      // Download coupon functionality
+      document.querySelectorAll('.download-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          const card = this.closest('.offer-card');
+          const offerTitle = card.dataset.title;
+          const storeName = card.dataset.store;
+
+          // Add downloading state
+          this.innerHTML = '<i class="bi bi-download"></i><span>Downloading...</span>';
+          this.disabled = true;
+
+          // Simulate download delay
+          setTimeout(() => {
+            this.innerHTML = '<i class="bi bi-check-circle"></i><span>Downloaded!</span>';
+            this.classList.remove('bg-teal-500', 'hover:bg-teal-600');
+            this.classList.add('bg-green-500');
+
+            // Show success message
+            alert(`Coupon for "${offerTitle}" from ${storeName} has been downloaded!`);
+
+            // Reset button after 2 seconds
+            setTimeout(() => {
+              this.innerHTML = '<i class="bi bi-download"></i><span>Download Coupon</span>';
+              this.disabled = false;
+              this.classList.remove('bg-green-500');
+              this.classList.add('bg-teal-500', 'hover:bg-teal-600');
+            }, 2000);
+          }, 1000);
+        });
+      });
+
+      // Initial filter run to show results counter
+      filterOffers();
+    });
 
 </script>
 
