@@ -172,6 +172,40 @@
   margin: 0;         /* optional, tighter spacing */
 }
 
+.gallery-carousel {
+  width: 100%;
+  max-width: 800px; /* Minimized width */
+  height: 180px; /* Minimized height */
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 10px;
+  animation: scrollGallery 20s linear infinite;
+}
+
+.gallery-track img {
+  width: 300px;  /* control width of each image */
+  height: 250px; /* control height of each image */
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Animation for infinite scroll */
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -285,13 +319,22 @@
 
   <!-- Gallery -->
 <div class="store-card">
-  <h5>Gallery</h5>
-  <div class="d-flex overflow-auto">
-    <img src="https://via.placeholder.com/200x120?text=SFX+Makeup" class="me-2 rounded" alt="">
-    <img src="https://via.placeholder.com/200x120?text=Cine+Makeup" class="me-2 rounded" alt="">
-    <img src="https://via.placeholder.com/200x120?text=Academy+Training" class="me-2 rounded" alt="">
+  <h5 class="mb-3">Gallery</h5>
+  <div class="gallery-carousel">
+    <div class="gallery-track">
+      <img src="img/hd.jpg" alt="Gallery 1">
+      <img src="img/Waterproof.jpg" alt="Gallery 2">
+      <img src="img/God.jpg" alt="Gallery 3">
+      <img src="img/Hair Spa.jpg" alt="Gallery 4">
+      <!-- Duplicate for infinite scroll -->
+      <img src="img/Threading.jpg" alt="Gallery 1">
+      <img src="img/Pedicure.jpg" alt="Gallery 2">
+      <img src="img/Manicure.jpg" alt="Gallery 3">
+      <img src="img/Facial Services.jpg" alt="Gallery 4">
+    </div>
   </div>
 </div>
+
 
 
   <!-- Specialities -->
@@ -315,7 +358,7 @@
   <div class="vendor-card text-center p-3">
 
     <!-- Profile -->
-    <img src="https://via.placeholder.com/80" class="profile-img mb-2" alt="Vendor">
+    <img src="img/shobi.jpeg" class="profile-img mb-2" alt="Vendor">
     <p class="text-muted mb-0">Hosted By</p>
     <h6 class="fw-bold">Shobana Devi P</h6>
 
